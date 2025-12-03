@@ -2,30 +2,39 @@
 GPS:
   time: 60
   bias_range: [-10, 10]
-  bias_pattern: "increasing"
+  bias_pattern: "constant"
   update_frequency: 0.1
   bias_intensity: 10
   max_hoping_distance: 50
   max_attack_duration: 60
   max_attack_distance: 600
+  drift_increment: 0.5     # for drift faults
+  precision_sigma: 0.5     # for precision_damage faults
+  spike_bias: 10.0         # for short circuit faults
 GYRO:
   time: 60
   bias_range: [-10, 10]
-  bias_pattern: "decreasing"
+  bias_pattern: "constant"
   update_frequency: 0.05
   bias_intensity: 10
   max_displacement: 80
   max_attack_duration: 30
   max_attack_distance: 100
+  drift_increment: -0.5
+  precision_sigma: 0.3
+  spike_bias: 8.0
 MAG:
   time: 60
   bias_range: [-10, 10]
-  bias_pattern: "increasing"
+  bias_pattern: "constant"
   update_frequency: 0.02
   bias_intensity: 10
   max_rotation: 35
   max_attack_duration: 60
   max_attack_distance: 200
+  drift_increment: 0.5
+  precision_sigma: 0.2
+  spike_bias: 12.0
 OPTICAL_FLOW:
   time: 60
   bias_range: [-10, 10]
@@ -35,6 +44,9 @@ OPTICAL_FLOW:
   max_flow_rate: 7.07
   max_attack_duration: 30
   max_attack_distance: 250
+  drift_increment: 0.7
+  precision_sigma: 0.7
+  spike_bias: 10.0
 ACCELEROMETER:
   time: 60
   bias_range: [-10, 10]
@@ -44,3 +56,6 @@ ACCELEROMETER:
   max_velocity: 3.9
   max_attack_duration: 20
   max_attack_distance: 86
+  drift_increment: 0.25
+  precision_sigma: 0.4
+  spike_bias: 9.0

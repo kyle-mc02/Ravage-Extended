@@ -45,9 +45,9 @@ def main(argv):
         raise Exception("SOFTWARE_HOME environment variable is not set!")
 
     if wipe_eeprom == "off" and SOFTWARE_VER == "ArduPilot":
-        c = SOFTWARE_HOME + 'Tools/autotest/sim_vehicle.py -v ' + vehicle_target + ' --console --map'
+        c = SOFTWARE_HOME + 'Tools/autotest/sim_vehicle.py -v ' + vehicle_target + ' --console --map' + ' --out=udp:127.0.0.1:14550'
     elif wipe_eeprom == "on" and SOFTWARE_VER == "ArduPilot":
-        c = SOFTWARE_HOME + 'Tools/autotest/sim_vehicle.py -v ' + vehicle_target + ' --console --map -w'
+        c = SOFTWARE_HOME + 'Tools/autotest/sim_vehicle.py -v ' + vehicle_target + ' --console --map -w' + ' --out=udp:127.0.0.1:14550'
     else:
         # c = 'cd ' + SOFTWARE_HOME + ' && make px4_sitl ' + vehicle_target
         c = 'cd ' + SOFTWARE_HOME + ' && make px4_sitl jmavsim'

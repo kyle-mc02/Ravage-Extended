@@ -11,6 +11,7 @@ import csv
 import os
 import math
 import numpy as np
+import random
 from pymavlink import mavutil
 from datetime import datetime
 
@@ -112,7 +113,7 @@ def handle_status(msg):
     elif "Failsafe enabled: no global position" in msg.text:
         gps_failsafe_error = 1
         print("[Critical] GPS Failsafe - No global position")
-
+    
     # Sensor-Specific Checks
     # Gyroscope
     elif "Vibration compensation ON" in msg.text:
@@ -438,7 +439,7 @@ def reset_all_params(master, params, original_values):
 
     Args:
         master (MAVLink_connection): The MAVLink connection object.
-        params (list): The list of parameters to reset.
+        params (list): The list of parameters to reset.sensor_config = load_config('config/attack_profile.yaml')  # Path to your sensor config file
         original_values (dict): A dictionary of original parameter values.
     """
     print("Resetting all parameters to their original values...")
@@ -502,7 +503,7 @@ def get_avg_deviation():
     return 0
 
 # Function to perform attack
-def perform_attack(master, software, attack_type, intensity, duration, config, sensor_config):
+def perform_attack(master, software, attack_type, intensity, duration, config, sensor_config, fault_type='bias'):
     """
     Performs the specified attack by manipulating parameters.
 
@@ -538,7 +539,12 @@ def perform_attack(master, software, attack_type, intensity, duration, config, s
     sensor = sensor_config.get(attack_type, {})
     time_duration = duration
     bias_range = sensor.get('bias_range', [-10, 10])
-    bias_pattern = sensor.get('bias_pattern', "constant")
+
+    # Attack Specific parameters
+    precision_sigma = sensor.get('precision_sigma', 0.0)
+    drift_increment = sensor.get('drift_increment', 0.5)
+    spike_bias = sensor.get('spike_bias', intensity)
+
     attack_result = "attack_running"
     
     # Fetch the deviation threshold from config or use default
@@ -557,29 +563,41 @@ def perform_attack(master, software, attack_type, intensity, duration, config, s
     # Define the attack parameters based on bias pattern
     min_bias, max_bias = bias_range
     current_bias = intensity  # Initial bias value from intensity
-
-    if bias_pattern == "increasing":
-        increment = 0.5  # Define the increment for increasing pattern
-    elif bias_pattern == "decreasing":
-        increment = -0.5  # Define the decrement for decreasing pattern
-    else:
-        increment = 0  # No change if constant
-
+    bias_pattern = None
     start_time = time.time()
     last_log_time = start_time
     
     while time.time() - start_time < time_duration:
         for param in original_values.keys():
+
+            if fault_type == "precision_damage":
+                if precision_sigma > 0:
+                    current_bias = intensity + random.gauss(0, precision_sigma)
+                else:
+                    current_bias = intensity
+            elif fault_type == "short_circuit":
+                current_bias = spike_bias
+
+            elif fault_type == "stuck":
+                current_bias = intensity
+
+            elif fault_type == "drift-pos":
+                bias_pattern = "increasing"
+                increment = drift_increment
+
+            elif fault_type == "drift-neg":
+                bias_pattern = "decreasing"
+                increment = drift_increment
+
             print(f"Injecting attack: {attack_type} on {param} with value {current_bias}")
             set_param(master, param, current_bias)
         
-        # Adjust the bias based on the pattern
-        if bias_pattern == "increasing":
-            current_bias = min(current_bias + increment, max_bias)
-        elif bias_pattern == "decreasing":
-            current_bias = max(current_bias + increment, min_bias)
-        elif bias_pattern == "constant":
-            current_bias = intensity  # Keep the value constant
+        # Adjust the bias based on the pattern (only for bias/drift faults)
+        if fault_type in ("drift-pos", "drift-neg"):
+            if bias_pattern == "increasing":
+                current_bias = min(current_bias + increment, max_bias)
+            elif bias_pattern == "decreasing":
+                current_bias = max(current_bias + increment, min_bias)
 
         # Log attack status periodically (every 5 seconds)
         current_time = time.time()
@@ -644,6 +662,7 @@ def parse_arguments():
     parser.add_argument('-s', '--software', choices=['ArduPilot', 'PX4'], required=True, help="Software platform (ArduPilot or PX4)")
     parser.add_argument('-a', '--attack', required=True, help="Type of attack (e.g., GPS, GYRO)")
     parser.add_argument('-d', '--deviation', type=float, required=False, help="Path deviation threshold in meters to consider attack successful (default: 5)")
+    parser.add_argument('-f', '--fault_type', choices=['precision_damage', 'stuck', 'short_circuit', 'drift-pos', 'drift-neg'], default='bias', help='Fault model to apply on selected sensor')
     return parser.parse_args()
 
 # Main function to run the script
@@ -688,7 +707,7 @@ def main():
     time.sleep(10)  
 
     # Run attack in a separate thread to allow continuous fuzzing during the attack duration
-    attack_thread = threading.Thread(target=perform_attack, args=(master, args.software, args.attack, args.intensity, time_duration, param_config, sensor_config))
+    attack_thread = threading.Thread(target=perform_attack, args=(master, args.software, args.attack, args.intensity, time_duration, param_config, sensor_config, args.fault_type))
     attack_thread.start()
 
     # Wait for the attack to complete
