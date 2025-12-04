@@ -544,6 +544,7 @@ def perform_attack(master, software, attack_type, intensity, duration, config, s
     precision_sigma = sensor.get('precision_sigma', 0.0)
     drift_increment = sensor.get('drift_increment', 0.5)
     spike_bias = sensor.get('spike_bias', intensity)
+    deviation = sensor.get('deviation', intensity)
 
     attack_result = "attack_running"
     
@@ -581,6 +582,9 @@ def perform_attack(master, software, attack_type, intensity, duration, config, s
             elif fault_type == "stuck":
                 current_bias = intensity
 
+            elif fault_type == "constant_deviation":
+                current_bias = deviation
+            
             elif fault_type == "drift-pos":
                 bias_pattern = "increasing"
                 increment = drift_increment
@@ -662,7 +666,7 @@ def parse_arguments():
     parser.add_argument('-s', '--software', choices=['ArduPilot', 'PX4'], required=True, help="Software platform (ArduPilot or PX4)")
     parser.add_argument('-a', '--attack', required=True, help="Type of attack (e.g., GPS, GYRO)")
     parser.add_argument('-d', '--deviation', type=float, required=False, help="Path deviation threshold in meters to consider attack successful (default: 5)")
-    parser.add_argument('-f', '--fault_type', choices=['precision_damage', 'stuck', 'short_circuit', 'drift-pos', 'drift-neg'], default='bias', help='Fault model to apply on selected sensor')
+    parser.add_argument('-f', '--fault_type', choices=['constant_deviation', 'precision_damage', 'stuck', 'short_circuit', 'drift-pos', 'drift-neg'], default='bias', help='Fault model to apply on selected sensor')
     return parser.parse_args()
 
 # Main function to run the script

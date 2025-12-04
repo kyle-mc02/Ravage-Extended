@@ -11,6 +11,7 @@ GPS:
   drift_increment: 0.5     # for drift faults
   precision_sigma: 0.5     # for precision_damage faults
   spike_bias: 10.0         # for short circuit faults
+  deviation: 2.0           # for constant deviation faults
 GYRO:
   time: 60
   bias_range: [-10, 10]
@@ -23,6 +24,7 @@ GYRO:
   drift_increment: -0.5
   precision_sigma: 0.3
   spike_bias: 8.0
+  deviation: 2.0
 MAG:
   time: 60
   bias_range: [-10, 10]
@@ -35,6 +37,7 @@ MAG:
   drift_increment: 0.5
   precision_sigma: 0.2
   spike_bias: 12.0
+  deviation: 2.0
 OPTICAL_FLOW:
   time: 60
   bias_range: [-10, 10]
@@ -47,6 +50,7 @@ OPTICAL_FLOW:
   drift_increment: 0.7
   precision_sigma: 0.7
   spike_bias: 10.0
+  deviation: 2.0
 ACCELEROMETER:
   time: 60
   bias_range: [-10, 10]
@@ -59,3 +63,4 @@ ACCELEROMETER:
   drift_increment: 0.25
   precision_sigma: 0.4
   spike_bias: 9.0
+  deviation: 2.0
