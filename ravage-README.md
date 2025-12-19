@@ -1,31 +1,29 @@
 # RAVAGE: Robotic Autonomous Vehicles' Attack Generation Engine
 
-**RAVAGE** is an attack injection tool that enables realistic physical attacks (e.g., GPS spoofing, gyroscope and accelerometer tampering) on robotic autonomous vehicles (RAVs) such as drones and rovers. 
+**RAVAGE** is an attack injection tool that enables realistic physical attacks (e.g., GPS spoofing, gyroscope and accelerometer tampering) on robotic autonomous vehicles (RAVs) such as drones and rovers. RAVAGE is designed to be:
+
+- **Extensible:** Easily integrates with multiple autopilot software platforms (e.g., ArduPilot, PX4).
+- **Configurable:** Allows fine-tuning of attack parameters (e.g., duration, intensity) without modifying autopilot code.
+- **Non-invasive:** Supports seamless attack injection in both virtual and real RAV environments.
+
 ---
 
-## New additions with RAVAGE-Extended
-There is now an additional flag --fault_type, -f. This flag will determine the type of fault that will be injected during the injection campaign. These fault classifications come from a 2019 paper that considers more realistic fault models. These fault types include
+## Key Features
+- Accurately emulates physical attacks via software.
+- Seamless integration with both virtual and real RAV systems.
+- Compatible with multiple RAV platforms and vehicle types.
 
-- `Constant Deviation Faults:` -f constant_deviation
-- `Gradual Drift Faults:` -f drift_pos | drift_neg
-- `Precision Damage Faults:` -f precision_damage
-- `Stuck Faults:` -f stuck
-- `Short Circuit Faults:` -f short_circuit
+---
 
-Each of these new fault types can now be included with the command to run the RAVAGE fault injector
+## Supported Tools
+RAVAGE has been tested with both drones and rovers using the following autopilot systems:
 
-```
-@INPROCEEDINGS{8942901,
-  author={Gong, Siyang and Meng, Shengwei and Wang, Benkuan and Liu, Datong},
-  booktitle={2019 Prognostics and System Health Management Conference (PHM-Qingdao)}, 
-  title={Hardware-In-the-Loop Simulation of UAV for Fault Injection}, 
-  year={2019},
-  volume={},
-  number={},
-  pages={1-6},
-  keywords={Circuit faults;Computational modeling;Mathematical model;Actuators;Data models;Aerospace control;Prognostics and health management;UAV;HILS;Fault Injection},
-  doi={10.1109/PHM-Qingdao46334.2019.8942901}}
-```
+- [**ArduPilot**](https://ardupilot.org/dev/docs/building-setup-linux.html)  
+- [**PX4**](https://docs.px4.io/main/en/dev_setup/dev_env.html)
+
+> PX4 supports Gazebo and JSBSim for simulation. We also recommend installing [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html).
+
+---
 
 ## Running RAVAGE
 There are two ways to run RAVAGE:
@@ -95,7 +93,7 @@ python ravage.py -s <autopilot> -a <attack_type> -i <intensity> -d <duration>
 - `-a`, `--attack_type`: Attack type (`GPS` | `GYRO` | `MAG` | `OPTICAL_FLOW` | `ACCELEROMETER`)
 - `-i`, `--intensity`: Attack intensity (float value)
 - `-d`, `--duration`: Attack duration (integer value)
-- `-f`, `--fault_type`: Fault type (`constant_deviation` | `precision_damage` | `stuck` | `short_circuit` | `drift-pos` | `drift-neg`)
+
 ---
 
 ## Example Workflow
@@ -106,15 +104,17 @@ python ravage.py -s <autopilot> -a <attack_type> -i <intensity> -d <duration>
 python mission.py -s ArduPilot
 ```
 
-3. Inject a GPS spoofing attack with intensity `3` and fault type constant deviation:
+3. Inject a GPS spoofing attack with intensity `3`:
 
 ```bash
-python ravage.py -s ArduPilot -a GPS -i 3 -f constant_deviation
+python ravage.py -s ArduPilot -a GPS -i 3
 ```
 
 This example initializes the simulation, sets mission waypoints, and performs a GPS spoofing attack during the mission.
 
-## Citation for the original RAVAGE work, this repository is a fork of their system
+## Citation
+If you find our work useful in your research, please consider citing:
+
 ```
 @inproceedings{dash2025ravage,
       title={RAVAGE: Robotic Autonomous Vehicles' Attack Generation Engine}, 
