@@ -87,7 +87,7 @@ python mission.py -s ArduPilot
 Use the following command to inject attacks:
 
 ```bash
-python ravage.py -s <autopilot> -a <attack_type> -i <intensity> -d <duration>
+python ravage.py -s <autopilot> -a <attack_type> -i <intensity> -d <duration> -f <fault_type>
 ```
 
 **Options:**
