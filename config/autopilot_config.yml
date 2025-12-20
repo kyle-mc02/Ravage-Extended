@@ -1,0 +1,7 @@
+RAVAGE_HOME: "/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/ravage"
+ARDUPILOT_HOME: "/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/ardupilot"
+PX4_HOME: "/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/PX4-Autopilot"
+
+RAVAGE_HOME="/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/ravage/"
+ARDUPILOT_HOME="/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/ardupilot/"
+PX4_HOME="/mnt/c/Users/jonzd/.vscode/HTML/CS6434/src/PX4-Autopilot/"

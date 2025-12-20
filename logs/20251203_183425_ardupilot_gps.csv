@@ -1,0 +1,4 @@
+Timestamp,Deviation_meters,Impact,Crash,Attack_result
+20251203_183425,0.1630771266545005,0,0,attack_running
+20251203_183425,0.4354579363933318,0,0,attack_running
+20251203_183425,0.4354579363933318,1,0,attack_success
