@@ -1,0 +1,226 @@
+Start Time,Sensor,Fault Type,Trial #,Attack Time,Avg Deviation (m),Max Deviation (m),Attack Result,Impact,Failsafe triggered?,Failsafe Type
+20251203_200345,GPS,precision_damage,1,2,0.07,0.26,Fail,0,Yes,EKF Primary Changed
+20251219_145709,GPS,precision_damage,2,2,0.28,2.34,Success,0,Yes,EKF Primary Changed
+20251219_151256,GPS,precision_damage,3,2,0.17,1.09,Success,1,Yes,Critical Failsafe condition triggered
+20251203_200503,GPS,precision_damage,1,5,0,0.2248110082,Fail,0,Yes,EKF Primary Changed
+20251219_152233,GPS,precision_damage,2,5,0.09,0.27,Success,0,Yes,EKF Primary Changed
+20251219_152651,GPS,precision_damage,3,5,0.17,1.63,Success,0,Yes,EKF Primary Changed
+20251203_200623,GPS,precision_damage,1,10,0.08,0.68,Fail,0,Yes,EKF Primary Changed
+20251219_153220,GPS,precision_damage,2,10,0.16,5.08,Success,0,Yes,EKF Primary Changed
+20251219_153556,GPS,precision_damage,3,10,0.2,1.39,Success,0,Yes,EKF Primary Changed
+20251203_200755,GPS,stuck,1,2,0,0.03,Fail,0,No,
+20251219_154041,GPS,stuck,2,2,0,0.01,Success,0,Yes,EKF Primary Changed
+20251219_154508,GPS,stuck,3,2,0,0,Fail,0,No,
+20251203_200956,GPS,stuck,1,5,0.11,0.36,Fail,0,No,
+20251219_154858,GPS,stuck,2,5,0.08,0.22,Success,0,Yes,EKF Primary Changed
+20251219_161906,GPS,stuck,3,5,0.18,2.27,Success,0,Yes,EKF Primary Changed
+20251203_201208,GPS,stuck,1,10,0.16,0.7,Fail,0,No,
+20251219_162402,GPS,stuck,2,10,0.16,2.22,Success,1,Yes,Critical Failsafe condition triggered
+20251219_162941,GPS,stuck,3,10,0.19,5.14,Success,0,Yes,Critical Failsafe condition triggered
+20251203_201410,GPS,short_circuit,1,2,0,0,Success,1,Yes,Critical Failsafe condition triggered
+20251219_163401,GPS,short_circuit,2,2,0.13,1.08,Success,1,Yes,Critical Failsafe condition triggered
+20251219_163756,GPS,short_circuit,3,2,0.15,1.59,Success,1,Yes,Critical Failsafe condition triggered
+20251203_201522,GPS,short_circuit,1,5,0.01,0.12,Fail,0,No,
+20251219_164046,GPS,short_circuit,2,5,0.13,1,Success,1,Yes,Critical Failsafe condition triggered
+20251219_164626,GPS,short_circuit,3,5,0,0,Success,0,Yes,EKF Failure
+20251203_201707,GPS,short_circuit,1,10,0,0,Success,1,No,
+20251219_165054,GPS,short_circuit,2,10,0.09,0.2,Success,0,Yes,EKF Primary Changed
+20251219_165512,GPS,short_circuit,3,10,0.13,0.71,Success,1,Yes,Critical Failsafe condition triggered
+20251219_170924,GPS,constant_deviation,1,2,0.16,1.64,Success,0,No,
+20251219_170108,GPS,constant_deviation,2,2,0.16,3.1,Fail,0,No,
+20251219_170441,GPS,constant_deviation,3,2,0.17,1.57,Success,1,Yes,Critical Failsafe Condition triggered
+20251203_203428,GPS,constant_deviation,1,5,0.42,1.16,Fail,0,No,
+20251219_171351,GPS,constant_deviation,2,5,0.17,1.07,Fail,0,No,
+20251219_171846,GPS,constant_deviation,3,5,0.14,1.59,Fail,0,No,
+20251203_210647,GPS,constant_deviation,1,10,0,0,Success,0,No,
+20251219_172636,GPS,constant_deviation,2,10,0.25,6.43,Success,0,No,
+20251219_173030,GPS,constant_deviation,3,10,0,0,Fail,0,No,
+20251219_173438,GPS,gradual_drift,1,2,0,0,Success,0,Yes,EKF Primary Changed
+20251219_173753,GPS,gradual_drift,2,2,0,0,Success,0,Yes,EKF Failure
+20251219_174216,GPS,gradual_drift,3,2,0.16,1.03,Success,0,Yes,EKF Primary Changed
+20251219_174625,GPS,gradual_drift,1,5,0.14,1.05,Success,0,Yes,EKF Primary Changed
+20251219_175049,GPS,gradual_drift,2,5,0.14,1.09,Success,0,Yes,EKF Primary Changed
+20251219_175526,GPS,gradual_drift,3,5,0.13,1.55,Success,0,Yes,EKF Primary Changed
+20251219_175803,GPS,gradual_drift,1,10,0.15,1.6,Success,0,Yes,EKF Primary Changed
+20251219_180341,GPS,gradual_drift,2,10,0.15,3.12,Success,0,Yes,EKF Primary Changed
+20251219_180828,GPS,gradual_drift,3,10,0,0,Success,0,Yes,Vibration Compensation
+20251203_202903,Gyro,precision_damage,1,2,0.47,7.47,Success,0,No,
+,Gyro,precision_damage,2,2,0.2,4.14,Success,0,No,
+,Gyro,precision_damage,3,2,0.31,4.68,Success,0,No,
+20251203_203013,Gyro,precision_damage,1,5,0.19,5.72,Success,0,No,
+,Gyro,precision_damage,2,5,0.17,2.78,Success,0,No,
+,Gyro,precision_damage,3,5,0.34,6.04,Success,0,No,
+20251203_203312,Gyro,precision_damage,1,10,0.05,0.89,Success,0,No,
+,Gyro,precision_damage,2,10,0.47,6.79,Success,0,No,
+,Gyro,precision_damage,3,10,0.22,3.92,Success,0,No,
+20251203_203540,Gyro,stuck,1,2,0.4,6.09,Success,1,No,
+,Gyro,stuck,2,2,0,0,Success,1,No,
+,Gyro,stuck,3,2,0,0,Success,0,No,
+20251203_205103,Gyro,stuck,1,5,0.36,6.21,Success,1,,
+,Gyro,stuck,2,5,0.32,5.62,Success,1,No,
+,Gyro,stuck,3,5,0,0,Success,0,No,
+20251203_205230,Gyro,stuck,1,10,0.1,0.66,Success,0,No,
+,Gyro,stuck,2,10,0.38,10.12,Success,0,No,
+,Gyro,stuck,3,10,0.31,5.74,Success,0,No,
+20251203_205530,Gyro,short_circuit,1,2,0.1,0.44,Fail,0,,
+,Gyro,short_circuit,2,2,0,0,Success,0,No,
+,Gyro,short_circuit,3,2,0.53,0.14,Success,0,No,
+20251203_205814,Gyro,short_circuit,1,5,0.12,0.79,Success,0,,
+,Gyro,short_circuit,2,5,0,0,Success,0,No,
+,Gyro,short_circuit,3,5,0.02,0.28,Success,0,No,
+20251203_205952,Gyro,short_circuit,1,10,0,0,Success,0,,
+,Gyro,short_circuit,2,10,0.11,1.77,Success,0,No,
+,Gyro,short_circuit,3,10,0.29,4.66,Success,1,No,
+,Gyro,constant_deviation,1,2,8.97,28.24,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,2,2,1.38,4.62,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,3,2,1.16,3.06,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,1,5,3.96,8.43,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,2,5,1.78,14.24,Success,0,Yes,EKF Primary Changed
+,Gyro,constant_deviation,3,5,1.54,5.11,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,1,10,3.92,8.81,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,2,10,3.19,12.07,Success,1,Yes,EKF Primary Changed
+,Gyro,constant_deviation,3,10,5.7,27.03,Success,1,Yes,EKF Primary Changed
+,Gyro,gradual_drift,1,2,2.08,27.73,Success,1,Yes,EKF Primary Changed
+,Gyro,gradual_drift,2,2,15.98,44.22,Success,0,Yes,EKF Primary Changed
+,Gyro,gradual_drift,3,2,1.13,7.91,Success,1,Yes,EKF Primary Changed
+,Gyro,gradual_drift,1,5,23.56,79.36,Success,0,Yes,EKF Primary Changed
+,Gyro,gradual_drift,2,5,1.35,7.29,Success,1,Yes,EKF Primary Changed
+,Gyro,gradual_drift,3,5,2.08,9.54,Success,1,Yes,EKF Primary Changed
+,Gyro,gradual_drift,1,10,0.38,6.38,Success,1,No,
+,Gyro,gradual_drift,2,10,0.09,1.1,Success,1,No,
+,Gyro,gradual_drift,3,10,0.1,1.06,Success,1,No,
+20251203_212027,Mag,precision_damage,1,2,0,0,Success,0,No,
+,Mag,precision_damage,2,2,0.05,0.12,Fail,0,No,
+,Mag,precision_damage,3,2,0,0,Success,0,No,
+20251203_212917,Mag,precision_damage,1,5,0.21,1.6,Success,0,No,
+,Mag,precision_damage,2,5,0,0,Fail,0,No,
+,Mag,precision_damage,3,5,0.17,2.79,Success,0,No,
+20251203_213622,Mag,precision_damage,1,10,0.11,0.85,Fail,0,No,
+,Mag,precision_damage,2,10,0,0,Fail,0,No,
+,Mag,precision_damage,3,10,0,0.2,Fail,0,No,
+20251203_214228,Mag,stuck,1,2,0.23,1.88,Success,0,No,
+,Mag,stuck,2,2,0.14,1.57,Fail,0,No,
+,Mag,stuck,3,2,0,0,Fail,0,No,
+20251203_220228,Mag,stuck,1,5,0,0,Fail,0,No,
+,Mag,stuck,2,5,0,0,Fail,0,No,
+,Mag,stuck,3,5,0.03,0.05,Success,0,No,
+20251203_221142,Mag,stuck,1,10,0,0,Fail,0,No,
+,Mag,stuck,2,10,0,0,Fail,0,No,
+,Mag,stuck,3,10,0.11,1.09,Fail,0,No,
+20251203_221850,Mag,short_circuit,1,2,0,0,Fail,0,No,
+,Mag,short_circuit,2,2,0.15,1.64,Fail,0,No,
+,Mag,short_circuit,3,2,0.13,1.57,Fail,0,No,
+20251203_222817,Mag,short_circuit,1,5,0,0,Fail,0,No,
+,Mag,short_circuit,2,5,0.12,0.95,Fail,0,No,
+,Mag,short_circuit,3,5,0.15,1.09,Fail,0,No,
+20251203_223245,Mag,short_circuit,1,10,0,0,Fail,0,No,
+,Mag,short_circuit,2,10,0.12,0.94,Fail,0,No,
+,Mag,short_circuit,3,10,0.19,4.1,Fail,0,No,
+,Mag,constant_deviation,1,2,0.15,0.95,Fail,0,No,
+,Mag,constant_deviation,2,2,0.14,4.12,Fail,0,No,
+,Mag,constant_deviation,3,2,0.16,3.03,Fail,0,No,
+,Mag,constant_deviation,1,5,0.12,1.55,Fail,0,No,
+,Mag,constant_deviation,2,5,0,0,Fail,0,No,
+,Mag,constant_deviation,3,5,0.09,0.87,Fail,0,No,
+,Mag,constant_deviation,1,10,0.15,1.65,Fail,0,No,
+,Mag,constant_deviation,2,10,0.17,1.62,Fail,0,No,
+,Mag,constant_deviation,3,10,0.19,1.68,Fail,0,No,
+,Mag,gradual_drift,1,2,0,0,Fail,0,No,
+,Mag,gradual_drift,2,2,0,0,Fail,0,No,
+,Mag,gradual_drift,3,2,0,0.02,Fail,0,No,
+,Mag,gradual_drift,1,5,0.15,1.64,Fail,0,No,
+,Mag,gradual_drift,2,5,0,0,Fail,0,No,
+,Mag,gradual_drift,3,5,0.15,1.02,Fail,0,No,
+,Mag,gradual_drift,1,10,0.21,1.62,Fail,0,No,
+,Mag,gradual_drift,2,10,0.12,1.05,Fail,0,No,
+,Mag,gradual_drift,3,10,0.18,1.54,Fail,0,No,
+20251203_223924,Optical Flow,precision_damage,1,2,0.12,0.12,Fail,0,No,None
+20251203_224121,Optical Flow,precision_damage,1,5,0.12,0.12,Fail,0,No,None
+20251203_224501,Optical Flow,precision_damage,1,10,0.12,0.12,Fail,0,No,None
+20251203_224618,Optical Flow,stuck,1,2,0.12,0.12,Fail,0,No,None
+20251203_224659,Optical Flow,stuck,1,5,0.12,0.12,Fail,0,No,None
+20251203_224732,Optical Flow,stuck,1,10,0.12,0.12,Fail,0,No,None
+20251203_224818,Optical Flow,short_circuit,1,2,0.44,1.95,Fail,0,No,None
+20251203_225051,Optical Flow,short_circuit,1,5,0,0,Success,0,No,None
+20251203_225141,Optical Flow,short_circuit,1,10,0.09,0.12,Fail,0,No,None
+,Optical Flow,constant_deviation,1,2,0.12,0.12,Fail,0,No,None
+,Optical Flow,constant_deviation,1,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,constant_deviation,1,10,0.12,0.11,Fail,0,No,None
+,Optical Flow,gradual_drift,1,2,0,0,Fail,0,No,None
+,Optical Flow,gradual_drift,1,5,0,0,Fail,0,No,None
+,Optical Flow,gradual_drift,1,10,0.02,0.05,Fail,0,No,None
+20251203_225702,ACCELEROMETER,precision_damage,1,2,0.1,1.96,Fail,0,No,None
+,,precision_damage,2,2,0.12,0.4,Fail,0,Yes,EKF Primary Changed
+,,precision_damage,3,2,0.08,0.94,Fail,0,No,
+20251203_230253,ACCELEROMETER,precision_damage,1,5,0,0,Fail,0,No,
+,,precision_damage,2,5,0,0,Success,0,Yes,EKF Change to LAND Mode
+,,precision_damage,3,5,0,0.02,Fail,0,Yes,EKF Primary Changed
+20251203_230329,ACCELEROMETER,precision_damage,1,10,0,0,Fail,0,Yes,Vibration Compensation Enabled
+,,precision_damage,2,10,0.01,0.05,Fail,0,Yes,EKF Primary Changed
+,,precision_damage,3,10,,,,,,
+,ACCELEROMETER,stuck,1,2,207.67,579.79,Success,1,Yes,EKF Primary Changed
+,,stuck,2,2,,,,,,
+,,stuck,3,2,,,,,,
+,ACCELEROMETER,stuck,1,5,,,,,,
+,,stuck,2,5,,,,,,
+,,stuck,3,5,,,,,,
+,ACCELEROMETER,stuck,1,10,,,,,,
+,,stuck,2,10,,,,,,
+,,stuck,3,10,,,,,,
+,ACCELEROMETER,short_circuit,1,2,,,,,,
+,,short_circuit,2,2,,,,,,
+,,short_circuit,3,2,,,,,,
+,ACCELEROMETER,short_circuit,1,5,,,,,,
+,,short_circuit,2,5,,,,,,
+,,short_circuit,3,5,,,,,,
+,ACCELEROMETER,short_circuit,1,10,0.32,6.53,Success,1,No,
+,,short_circuit,2,10,,,,,,
+,,short_circuit,3,10,,,,,,
+,ACCELEROMETER,constant_deviation,1,2,,,,,,
+,,constant_deviation,2,2,,,,,,
+,,constant_deviation,3,2,,,,,,
+,ACCELEROMETER,constant_deviation,1,5,,,,,,
+,,constant_deviation,2,5,,,,,,
+,,constant_deviation,3,5,,,,,,
+,ACCELEROMETER,constant_deviation,1,10,0.85,11.72,Success,1,Yes,EKF Primary Changed
+,,constant_deviation,2,10,0.92,11.59,Success,1,Yes,EKF Primary Changed
+,,constant_deviation,3,10,0.68,11.77,Success,1,Yes,EKF Primary Changed
+,ACCELEROMETER,gradual_drift,1,2,,,,,,
+,,gradual_drift,2,2,,,,,,
+,,gradual_drift,3,2,,,,,,
+,ACCELEROMETER,gradual_drift,1,5,,,,,,
+,,gradual_drift,2,5,,,,,,
+,,gradual_drift,3,5,,,,,,
+,ACCELEROMETER,gradual_drift,1,10,23.24,255.65,Success,0,yes,EKF Primary Changed
+,,gradual_drift,2,10,,,,,,
+,,gradual_drift,3,10,,,,,,
+,Optical Flow,precision_damage,2,2,0,0,Fail,0,No,None
+,Optical Flow,precision_damage,2,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,precision_damage,2,10,0.01,0.12,Fail,0,No,None
+,Optical Flow,stuck,2,2,0,0,Fail,0,No,None
+,Optical Flow,stuck,2,5,0,0,Fail,0,No,None
+,Optical Flow,stuck,2,10,0.12,0.12,Fail,0,No,None
+,Optical Flow,short_circuit,2,2,0,0,Fail,0,No,None
+,Optical Flow,short_circuit,2,5,0,0,Fail,0,No,None
+,Optical Flow,short_circuit,2,10,0.02,0.12,Fail,0,No,None
+,Optical Flow,constant_deviation,2,2,0,0,Fail,0,No,None
+,Optical Flow,constant_deviation,2,5,0,0,Fail,0,No,None
+,Optical Flow,constant_deviation,2,10,0,0,Fail,0,No,None
+,Optical Flow,gradual_drift,2,2,0,0,Fail,0,No,None
+,Optical Flow,gradual_drift,2,5,0,0,Fail,0,No,None
+,Optical Flow,gradual_drift,2,10,0.12,0.12,Fail,0,No,None
+,Optical Flow,precision_damage,3,2,0,0,Fail,0,No,None
+,Optical Flow,precision_damage,3,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,precision_damage,3,10,0.02,0.12,Fail,0,No,None
+,Optical Flow,stuck,3,2,0.08,0.12,Fail,0,No,None
+,Optical Flow,stuck,3,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,stuck,3,10,0.12,0.12,Fail,0,No,None
+,Optical Flow,short_circuit,3,2,0,0,Fail,0,No,None
+,Optical Flow,short_circuit,3,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,short_circuit,3,10,0.12,0.12,Fail,0,No,None
+,Optical Flow,constant_deviation,3,2,0.17,1.56,Fail,0,No,None
+,Optical Flow,constant_deviation,3,5,0.15,1.55,Fail,0,No,None
+,Optical Flow,constant_deviation,3,10,0.23,1.43,Fail,0,No,None
+,Optical Flow,gradual_drift,3,2,0.12,0.12,Fail,0,No,None
+,Optical Flow,gradual_drift,3,5,0.12,0.12,Fail,0,No,None
+,Optical Flow,gradual_drift,3,10,0.12,0.12,Fail,0,No,None
